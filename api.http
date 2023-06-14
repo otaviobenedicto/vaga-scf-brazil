@@ -1,0 +1,37 @@
+# For use this VsCode Extension you must 
+
+
+GET http://localhost:3000/users
+
+###
+GET http://localhost:3000/user?name=João Oliveira
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name":"Otavio Benedicto",
+    "job":"Web Developer"
+}
+
+###
+DELETE http://localhost:3000/users?name=João Oliveira
+
+###
+PUT http://localhost:3000/users?id=1
+Content-Type: application/json
+
+{
+    "job":"Desenvolvedor Senior"
+}
+
+###
+GET http://localhost:3000/users/access?name=João Oliveira
+
+###
+GET http://localhost:3000/users/access
+
+
+###
+GET http://localhost:3000/stats
