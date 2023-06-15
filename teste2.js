@@ -5,11 +5,11 @@ module.exports = function (req, res) {
   var { name, job } = req.body;
 
   if (!name) {
-    return "You must insert a name";
+    return "Voce precisa inserir o name";
   }
 
   if (!job) {
-    return "You must insert a job";
+    return "Voce precisa inserir o job";
   }
 
   var newUser = {
@@ -22,6 +22,6 @@ module.exports = function (req, res) {
     res.status(201).send(data[data.length - 1]);
   } catch (error) {
     console.error(error);
-    res.status(400).send("Fail to add a new user");
+    res.status(400).send("Falha ao adicionar o usuário!");
   }
 };

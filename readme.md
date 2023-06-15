@@ -1,43 +1,72 @@
-# Este é um teste para desenvolvedores
 
-# possui 5 testes
+# Projeto SCF Brazil 
 
-## Introdução
+![Logo](./img/logo.png)
 
-Este projeto possui um banco de dados fake em fakeData.js com apenas um registro.
-A ideia é melhorar e o CRUD escrito nos 4 arquivos de teste abaixo.
+Este projeto contém 6 desafios propostos pelo SCF Brazil. Ele é construído usando Node.js e Express para o servidor e Nodemon para teste de servidor.
 
-Será a validada a forma de escrita de código.
-Escreva códigos que humanos consigam entender.
 
-Fique a vontade para fazer modificaçoes nos serviços, comentários em código, estrutura, mas seja objetivo.
+## Instalação
 
-## teste1.js
+Instalar meu projeto com npm
 
-GET em /user 
+1. Clone o repositório:
+```bash
+git clone https://github.com/otaviobenedicto/vaga-scf-brazil.git
+```
 
-Possuimos neste arquivo um serviço que faz uma busca no banco fake e retorna um registro.
-Este código funciona, mas é possivel melhorar.
-Veja o que pode deixar ele melhor escrito e mais performatico.
+2. Navegue até o diretório do projeto:
+```bash
+cd vaga-scf-brasil
+```
 
-## teste2.js
+3. Instale as dependências:
+```bash
+npm install
+```
 
-POST em /users, descubra a intenção dele e o corrija.
 
-## teste3.js
+    
+## Teste de servidor
 
-Este procura um usuário e o deleta da base.
-Retorne sucesso para o client caso realmente tenha sido excluido e deixe o código mais performatico.
+Para testar o servidor usando Nodemon, execute o seguinte comando:
 
-## teste4.js
+```bash
+  npm run test
+```
 
-Atualiza os dados de um usuário especifico.
 
-## teste5.js
+## Uso
 
-Retorne quantas vezes determinado usuário foi lido no teste1.
+1. Iniciar servidor: `npm start`
+2. O servidor estará rodando em `http://localhost:3000`
 
-## teste 6
 
-Definina uma forma de criar permissão para o usuario, defina se o usuário pode deletar ou atualizar usuários. Crie um middleware para validar essas permissões e adicione no teste4 e teste3.
+## Rotas
 
+### Teste 1: GET em /user e /users
+
+Alteração do for para metodo find para melhorar a performace. 
+
+### Desafio 2: POST em /users
+
+Adicionando valores ao FakeData.js com metodos de validação do corpo da requisição. 
+
+### Desafio 3: DELETE em /users
+Utiliza um middleware que valida os dados do usuário antes de deletar o usuario pelo nome. 
+
+OBS: Se o job for igual a 'Desenvolvedor' a acão não será permitida
+
+### Desafio 4: PUT em /users
+
+Utiliza um middleware que valida os dados do usuário antes de alterar o usuario pelo nome.
+
+OBS: Se o job for igual a 'Desenvolvedor' a acão não será permitida
+
+### Desafio 5: GET em /users/access
+
+Utiliza um metodo o core module fs (fileStorage) para armazenar as requisições do método GET em /user?name=Name Example em stats.json, e retorna a quantidade de requisções por usuário.
+
+### Desafio 6: Middleware
+
+Middleware que faz uma verifica a permissão do usúario para modificar.

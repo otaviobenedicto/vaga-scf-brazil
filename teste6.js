@@ -8,9 +8,9 @@ module.exports = function (req, res, next) {
     : data.find((item) => item.id == id);
 
   if (!userSession) {
-    return res.status(403).send("User not found");
+    return res.status(403).send("Usuario não foi encontrado!");
   }
-  
+
   res.locals.user = userSession;
 
   // O usuário não pode alterar cargo de desenvolvedores

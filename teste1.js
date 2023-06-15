@@ -8,7 +8,7 @@ const getUser = (req, res, next) => {
   const user = data.find((item) => item.name == name);
 
   // HTTP Response
-  user ? res.status(200).send(user) : res.status(404).send("User not found!");
+  user ? res.status(200).send(user) : res.status(404).send("Usuario não foi encontrado!");
 
   next();
 };

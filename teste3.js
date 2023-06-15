@@ -8,14 +8,14 @@ module.exports = function (req, res) {
 
   //   Check if user exists and remove it!
   if (indexUser < 0) {
-    return res.status(404).send("User not found!");
+    return res.status(404).send("Usuario não foi encontrado!");
   } else {
     try {
       data.splice(indexUser, 0);
       return res.status(200).send("success");
     } catch (error) {
       console.log(error);
-      return res.status(400).send("Error to delete an user!");
+      return res.status(400).send("Falha ao deletar o usuário!");
     }
   }
 };
