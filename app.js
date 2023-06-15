@@ -21,31 +21,19 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-function getRoute(req) {
-  const route = req.route ? req.route.path : "";
-  const baseUrl = req.baseUrl ? req.baseUrl : "";
-
-  return route ? `${baseUrl === "/" ? "" : baseUrl}${route}` : "unknown route";
-}
-
-const dumpStats = (stats) => {
-  try {
-    fs.writeFileSync(FILE_PATH, JSON.stringify(stats), {
-      flag: "w+",
-    });
-  } catch (err) {
-    console.error(err);
-  }
-};
-
 // Middleware function to count requests and send to stats.json
 app.use((req, res, next) => {
   res.on("finish", () => {
-    if (getRoute(req) === "/user") {
+    const route = req.route ? req.route.path : "";
+    const baseUrl = req.baseUrl ? req.baseUrl : "";
+    route ? `${baseUrl === "/" ? "" : baseUrl}${route}` : "unknown route";
+    if (route === "/user") {
       const stats = JSON.parse(fs.readFileSync(FILE_PATH));
       const event = `${decodeURI(req.originalUrl).split("=")[1]}`;
       stats[event] = stats[event] ? stats[event] + 1 : 1;
-      dumpStats(stats);
+      fs.writeFileSync(FILE_PATH, JSON.stringify(stats), {
+        flag: "w+",
+      });
     }
   });
   next();

@@ -1,29 +1,30 @@
-# For use this VsCode Extension you must 
+# If you want test this requests. You need to install VsCode Extension REST Client
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
 ### teste 1
 GET http://localhost:3000/users
 
 ### teste 1
-GET http://localhost:3000/user?name=João Oliveira
+GET http://localhost:3000/user?name=Otavio Benedicto
 
 ### teste 2
 POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "name":"Otavio Benedicto",
+    "name":"New Username",
     "job":"Web Developer"
 }
 
 ### teste 3
-DELETE http://localhost:3000/users?name=João Oliveira
+DELETE http://localhost:3000/users?name=New Username
 
 ### teste 4
-PUT http://localhost:3000/users?id=1
+PUT http://localhost:3000/users?id=2
 Content-Type: application/json
 
 {
-    "job":"Desenvolvedor Senior"
+    "job":"Desenvolvedor Junior"
 }
 
 ### teste 5

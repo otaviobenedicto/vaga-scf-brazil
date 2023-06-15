@@ -1,7 +1,8 @@
 var data = require("./fakeData");
 
 module.exports = function (req, res) {
-  var id = req.query.id;
+  var id = res.locals.user.id;
+
   var { job, name } = req.body;
 
   const index = data.findIndex((d) => d.id == id);
