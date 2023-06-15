@@ -1,7 +1,7 @@
 var data = require("./fakeData");
 
 const getUser = (req, res, next) => {
-  // Request parameter to find
+  // Request parameter to find by Primery Key (ID)
   var name = req.query.name;
 
   // Algorithm to match user

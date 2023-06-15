@@ -1,13 +1,12 @@
 var data = require("./fakeData");
 
 module.exports = function (req, res) {
-        
-  var name = req.query.name;
+  var name = res.locals.user.name;
 
-// Find user to be removed  
+  // Find user to be removed
   const indexUser = data.findIndex((item) => item.name === name);
 
-//   Check if user exists and remove it!
+  //   Check if user exists and remove it!
   if (indexUser < 0) {
     return res.status(404).send("User not found!");
   } else {

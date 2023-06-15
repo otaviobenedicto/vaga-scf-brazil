@@ -1,12 +1,12 @@
 # For use this VsCode Extension you must 
 
-
+### teste 1
 GET http://localhost:3000/users
 
-###
+### teste 1
 GET http://localhost:3000/user?name=João Oliveira
 
-###
+### teste 2
 POST http://localhost:3000/users
 Content-Type: application/json
 
@@ -15,10 +15,10 @@ Content-Type: application/json
     "job":"Web Developer"
 }
 
-###
+### teste 3
 DELETE http://localhost:3000/users?name=João Oliveira
 
-###
+### teste 4
 PUT http://localhost:3000/users?id=1
 Content-Type: application/json
 
@@ -26,12 +26,5 @@ Content-Type: application/json
     "job":"Desenvolvedor Senior"
 }
 
-###
+### teste 5
 GET http://localhost:3000/users/access?name=João Oliveira
-
-###
-GET http://localhost:3000/users/access
-
-
-###
-GET http://localhost:3000/stats
